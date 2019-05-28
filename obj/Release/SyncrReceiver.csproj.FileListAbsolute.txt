@@ -1,0 +1,6 @@
+C:\Case\Libraries\Bin\Release\SyncrReceiver.dll
+C:\Case\Libraries\Bin\Release\SyncrReceiver.pdb
+C:\Case\Libraries\SyncrReceiver\obj\Release\SyncrReceiver.csprojResolveAssemblyReference.cache
+C:\Case\Libraries\SyncrReceiver\obj\Release\SyncrReceiver.csproj.CoreCompileInputs.cache
+C:\Case\Libraries\SyncrReceiver\obj\Release\SyncrReceiver.dll
+C:\Case\Libraries\SyncrReceiver\obj\Release\SyncrReceiver.pdb

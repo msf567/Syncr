@@ -1,0 +1,6 @@
+C:\Case\Libraries\SyncrReceiver\obj\Release\MusicICP.csprojResolveAssemblyReference.cache
+C:\Case\Libraries\SyncrReceiver\obj\Release\MusicICP.csproj.CoreCompileInputs.cache
+C:\Case\Libraries\Bin\Release\MusicIPC.dll
+C:\Case\Libraries\Bin\Release\MusicIPC.pdb
+C:\Case\Libraries\SyncrReceiver\obj\Release\MusicIPC.dll
+C:\Case\Libraries\SyncrReceiver\obj\Release\MusicIPC.pdb
