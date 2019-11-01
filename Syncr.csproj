@@ -54,6 +54,9 @@
     <Reference Include="NamedPipeLib">
       <HintPath>..\Bin\NamedPipeLib.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.2\lib\net35\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Sanford.Multimedia.Midi, Version=6.6.1.0, Culture=neutral, PublicKeyToken=ca68fc35b6bf983a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Bin\Release\Sanford.Multimedia.Midi.dll</HintPath>
@@ -74,6 +77,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="QuadScore.cs" />
+    <Compile Include="QuadScoreRunner.cs" />
+    <Compile Include="SilentRunner.cs" />
     <Compile Include="MidiManager.cs" />
     <Compile Include="SyncrCommandLine.cs">
       <SubType>Form</SubType>
@@ -198,6 +204,9 @@
       <DependentUpon>WindowManager.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

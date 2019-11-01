@@ -77,16 +77,16 @@ namespace Syncr
 
         private void HandleChannelMessageReceived(object sender, ChannelMessageEventArgs e)
         {
-            Console.WriteLine("new msg");
+            //Console.WriteLine("new msg");
             if (map != null)
                 map.ExecuteAction(e);
 
             
-            Console.WriteLine(e.Message.Command.ToString() + '\t' + '\t' +
-            e.Message.MidiChannel.ToString() + '\t' +
-            e.Message.Data1.ToString() + '\t' +
-            e.Message.Data2.ToString() + '\t' +
-            e.Message.Status.ToString());
+          //  Console.WriteLine(e.Message.Command.ToString() + '\t' + '\t' +
+           // e.Message.MidiChannel.ToString() + '\t' +
+           // e.Message.Data1.ToString() + '\t' +
+           // e.Message.Data2.ToString() + '\t' +
+           // e.Message.Status.ToString());
             
         }
     }

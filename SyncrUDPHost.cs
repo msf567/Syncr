@@ -298,7 +298,7 @@ namespace Syncr
         {
             byte[] bytes = Encoding.UTF8.GetBytes(pkt.Trim());
 
-            if (!pkt.Contains("HEARTBEAT") && !pkt.Contains("TAP") && verbose)
+            if (!pkt.Contains("HEARTBEAT") && !pkt.Contains("UPDATE")&& !pkt.Contains("TAP") && verbose)
                 Console.WriteLine("Broadcasting: " + Encoding.UTF8.GetString(bytes) + ".");
             lock (ClientPortLock)
                 foreach (ClientConnection c in ClientConnections.Values)

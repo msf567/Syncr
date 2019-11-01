@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Syncr
@@ -19,11 +20,32 @@ namespace Syncr
     {
         PreciseTimer _timer = new PreciseTimer();
         LoopCallback _callback;
+        Thread updateThread;
+        bool closeflag = false;
         public delegate void LoopCallback(double elapsed);
         public FastLoop(LoopCallback callback)
         {
             _callback = callback;
-            Application.Idle += new EventHandler(OnApplicationEnterIdle);
+            //Application.Idle += new EventHandler(OnApplicationEnterIdle);
+        }
+
+        public void Start()
+        {
+            updateThread = new Thread(Update);
+            updateThread.Start();
+        }
+
+        public void Close()
+        {
+            closeflag = true;
+        }
+
+        void Update()
+        {
+            while (!closeflag)
+            {
+                _callback(_timer.GetElapsedTime());
+            }
         }
 
         private void OnApplicationEnterIdle(object sender, EventArgs e)

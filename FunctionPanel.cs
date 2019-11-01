@@ -43,7 +43,7 @@ namespace Syncr
 
         private void groupNameLabel_Click(object sender, EventArgs e)
         {
-            control.FlagProcessForRestart(procName);
+            control.runner.FlagProcessForRestart(procName);
         }
     }
 

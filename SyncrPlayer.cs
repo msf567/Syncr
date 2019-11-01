@@ -36,14 +36,14 @@ namespace Syncr
 
         public bool paused = false;
         public delegate void TriggerFunction(string param);
-
-        private int currentMillis = 0;
+        public int CurrentMillis { get; private set; } = 0;
         private int lastMillis = 0;
         private int triggerIndex = 0;
 
         public Dictionary<string, TriggerFunction> BoundFunctions;
         List<Trigger> _currentTriggers;
         public bool IsPlaying;
+
         public List<Trigger> GetCurrentTriggers()
         {
             List<Trigger> temp = new List<Trigger>(_currentTriggers);
@@ -99,7 +99,7 @@ namespace Syncr
                 currentMusic.SetPosition(TimeSpan.FromMilliseconds(newPosInMillis));
                 UpdateMillis();
 
-                while (CurrentScore.Triggers[triggerIndex].time < currentMillis)
+                while (CurrentScore.Triggers[triggerIndex].time < CurrentMillis)
                     SkipNextTrigger();
             }
         }
@@ -130,7 +130,7 @@ namespace Syncr
         {
             UpdateMillis();
 
-            if (lastMillis > currentMillis)
+            if (lastMillis > CurrentMillis)
                 RestartIndex();
 
             //_currentTriggers.Clear();
@@ -138,14 +138,15 @@ namespace Syncr
             if (CurrentScore.Triggers.Count == 0)
                 return;
 
-            if (currentMillis >= CurrentScore.Triggers[triggerIndex].time)
+            if (CurrentMillis >= CurrentScore.Triggers[triggerIndex].time)
                 ActivateNextTrigger();
         }
 
         private void UpdateMillis()
         {
-            lastMillis = currentMillis;
-            currentMillis = (int)currentMusic.GetPosition().TotalMilliseconds;
+            lastMillis = CurrentMillis;
+            if (currentMusic != null)
+                CurrentMillis = (int)currentMusic.GetPosition().TotalMilliseconds;
             // Console.WriteLine(currentMillis);
 
         }

@@ -20,7 +20,7 @@ namespace Syncr
 
         private void SendCommand()
         {
-            control.BroadcastMessage(commandLine.Text);
+            control.runner.BroadcastMessage(commandLine.Text);
             commandLine.Text = "";
         }
 
